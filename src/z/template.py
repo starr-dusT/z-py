@@ -1,4 +1,4 @@
-import template_funcs as tf
+from z import template_funcs
 from pathlib import Path
 from typing import List
 import re
@@ -14,4 +14,4 @@ def split_template(s: str) -> (List[str], str):
 
 def apply_template(path: Path, name: str):
     fns, s = split_template(read_file(path, name))
-    return s.format(*[eval("tf." + fn)() for fn in fns])
+    return s.format(*[eval("template_funcs." + fn)() for fn in fns])

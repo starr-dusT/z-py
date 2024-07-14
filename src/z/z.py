@@ -1,9 +1,7 @@
 from pathlib import Path
 import argparse
-import create
+from z import create
 import sys
-
-folder = "dude2"
 
 def init_parser():
     parser = argparse.ArgumentParser(prog="z.py", description="top level prog")
@@ -19,7 +17,6 @@ def main():
     z_file = Path("./.z")
     if not z_file.is_file():
         raise Exception("You aren't in a z.py folder. Re-run in a z.py folder") 
-
     parser = init_parser()
     args = parser.parse_args()
     args.func(args)
