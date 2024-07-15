@@ -1,5 +1,12 @@
+# Python autogen
 __pycache__/
 .venv/
 *.egg-info/
 build/
+
+# Nixos files
 .direnv/
+
+# Example folder
+example/*
+!example/templates/*
