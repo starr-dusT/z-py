@@ -40,10 +40,10 @@ def normalize_name(name: str, tags: str, time: datetime.date | None = None, ext:
 def create_file(name: str, silo: str, template: str = "default.md"):
     if silo:
         Path(silo).mkdir(exist_ok=True)
-        if silo[-1] != '/':
-            silo += '/'
-    content = apply_template(Path.home().joinpath('.config/z/templates'), template)
-    with open(silo + name, 'w') as f:
+        if silo[-1] != "/":
+            silo += "/"
+    content = apply_template(Path.home().joinpath(".config/z-py/templates"), template)
+    with open(silo + name, "w") as f:
         f.write(content)
     return
 
